@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #444;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            color: #555;
+        }
+        .code-input {
+            width: 100%;
+            height: 150px;
+            font-family: monospace;
+            font-size: 14px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+        .output-container {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 15px;
+            font-family: monospace;
+        }
+        .next-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .next-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coding Test</h1>
+        
+        <!-- Simple Question -->
+        <div class="section" id="simple-section">
+            <h2>Simple Question</h2>
+            <div class="question">
+                <h3>Write a function to calculate the sum of two numbers.</h3>
+                <textarea id="simple-code" class="code-input" placeholder="Write your code here..."></textarea>
+                <button class="submit-btn" onclick="submitCode('simple')">Submit</button>
+                <div class="result" id="simple-result"></div>
+                <div class="output-container" id="simple-output"></div>
+            </div>
+        </div>
+        
+        <!-- Intermediate Question -->
+        <div class="section" id="intermediate-section">
+            <h2>Intermediate Question</h2>
+            <div class="question">
+                <h3>Write a function to check if a string is a palindrome.</h3>
+                <textarea id="intermediate-code" class="code-input" placeholder="Write your code here..."></textarea>
+                <button class="submit-btn" onclick="submitCode('intermediate')">Submit</button>
+                <div class="result" id="intermediate-result"></div>
+                <div class="output-container" id="intermediate-output"></div>
+            </div>
+        </div>
+        
+        <!-- Advanced Question -->
+        <div class="section" id="advanced-section">
+            <h2>Advanced Question</h2>
+            <div class="question">
+                <h3>Write a function to find all prime numbers less than a given number.</h3>
+                <textarea id="advanced-code" class="code-input" placeholder="Write your code here..."></textarea>
+                <button class="submit-btn" onclick="submitCode('advanced')">Submit</button>
+                <div class="result" id="advanced-result"></div>
+                <div class="output-container" id="advanced-output"></div>
+            </div>
+        </div>
+
+        <!-- Button to go to result page -->
+        <button class="next-btn" onclick="goToResultPage()">Go to Result Page</button>
+    </div>
+
+    <script>
+        function submitCode(level) {
+            const code = document.getElementById(`${level}-code`).value.trim();
+            const result = document.getElementById(`${level}-result`);
+            const output = document.getElementById(`${level}-output`);
+
+            if (code === "") {
+                result.textContent = "Please write some code before submitting.";
+                result.style.color = "red";
+                output.textContent = "";
+                return;
+            }
+
+            // Example feedback for demo purposes
+            result.textContent = `Code submitted successfully for the ${level} question.`;
+            result.style.color = "green";
+
+            // Placeholder output
+            output.textContent = "Output: (Execution of code is not supported in this demo)";
+        }
+
+        function goToResultPage() {
+            window.location.href = "result.html"; // Redirect to result.html
+        }
+    </script>
+</body>
+</html>
